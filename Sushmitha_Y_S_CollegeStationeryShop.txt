@@ -1,0 +1,136 @@
+import java.util.*;
+
+public class CollegeStationeryShop 
+    {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int tshirt, jacket, caps, notebook, pens, markers;
+        float sum;float pt, pj, pc, pn,pp,pm;
+        float npt, npj, npc, npn,npp, npm, ntotal;
+        float tax,total,dtotal,dif;
+        float dp;
+        System.out.println("input number of tshits");
+        tshirt = sc.nextInt();
+        System.out.println("input number of jackets");
+        jacket = sc.nextInt();
+        System.out.println("input number of caps");
+        caps= sc.nextInt();
+        System.out.println("input number of notebook");
+        notebook = sc.nextInt();
+        System.out.println("input number of pens");
+        pens = sc.nextInt();
+        System.out.println("input number of markers");
+        markers = sc.nextInt();
+        if (tshirt >0 ) {
+            if (tshirt <= 2) {
+                System.out.println("Item_added");
+                pt=tshirt*1000;
+            }
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+        pt=tshirt*1000;
+        if (jacket >0 ) {
+            if (jacket <= 2){
+                System.out.println("Item_added");
+
+            }
+
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+         pj=jacket*2000;
+        if (caps >0 ) {
+            if (caps <= 2){
+                System.out.println("Item_added");
+
+            }
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+         pc=caps*500;
+        if (notebook >0 ) {
+            if (notebook <= 3)
+            {
+                System.out.println("Item_added");
+
+            }
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+        pn=notebook*200;
+        if (pens >0 ) {
+            if (pens <= 3)
+            {
+                System.out.println("Item_added");
+
+            }
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+        pp=pens*300;
+        if (markers>0 ) {
+            if (markers <= 3){
+                System.out.println("Item_added");
+
+            }
+            else
+                System.out.println("ERROR_QUANTITY_EXCEEDED");
+        }
+         pm=markers*500;
+
+        sum=pt+pj+pc+pn+pp+pm;
+
+
+        if(sum>0) {
+            if (sum >= 1000 && sum < 3000) {
+
+                 dp = (float) (0.1 *pt);
+               
+               npt=pt-dp;
+
+
+
+
+                npj = pj -(float) ((0.05) * pj);
+                npc = pc - (float)((0.2) * pc);
+                npn = pn - (float)((0.2) * pn);
+                npp = pp - (float)((0.1) * pp);
+                npm = pm - (float)((0.05) * pm);
+                ntotal = npj + npc + npn + npm + npt + npp;
+                tax = (float)(0.1) * ntotal;
+                total = ntotal + tax;
+                dif = ((sum - ntotal));
+                System.out.println("the price discounted is= " + dif);
+                System.out.println("the total bill is= " + total);
+
+            }
+            else {
+                dp = (float) (0.1 *pt);
+
+                npt=pt-dp;
+
+                npj = pj -(float) ((0.05) * pj);
+                npc = pc - (float)((0.2) * pc);
+                npn = pn - (float)((0.2) * pn);
+                npp = pp - (float)((0.1) * pp);
+                npm = pm - (float)((0.05) * pm);
+                ntotal = npj + npc + npn + npm + npt + npp;
+
+
+                dtotal =ntotal-(float)(0.05*ntotal);
+
+                tax = (float)(0.1) * dtotal;
+                total = dtotal + tax;
+                dif = ((sum - dtotal));
+                System.out.println("The sum total before discounts is="+sum);
+                System.out.println("the price discounted is= " + dif);
+                System.out.println("the final bill net of all discounts is= " + total);
+        
+
+            }
+        }
+
+    }
+    
+}
